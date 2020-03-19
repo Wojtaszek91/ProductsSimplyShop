@@ -21,10 +21,15 @@ namespace SimplyProductShop.Controllers
             _context.Dispose();
         }
         // GET: Products
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var productList = _context.ProductsModel.ToList(); 
             return View(new ProductListViewModel { ProductList = productList});
+        }
+        //Get: Products/Details
+        public ViewResult Details(int id)
+        {
+            return View();
         }
     }
 }

@@ -193,6 +193,10 @@
     <Compile Include="Migrations\202003191617460_AddProductsToDb.Designer.cs">
       <DependentUpon>202003191617460_AddProductsToDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003191711580_AddCategoryPropertyToProductModel.cs" />
+    <Compile Include="Migrations\202003191711580_AddCategoryPropertyToProductModel.Designer.cs">
+      <DependentUpon>202003191711580_AddCategoryPropertyToProductModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\ProductListViewModel.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -261,6 +266,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\EditAbout.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003191617460_AddProductsToDb.resx">
       <DependentUpon>202003191617460_AddProductsToDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003191711580_AddCategoryPropertyToProductModel.resx">
+      <DependentUpon>202003191711580_AddCategoryPropertyToProductModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
