@@ -21,6 +21,7 @@ namespace SimplyProductShop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<AboutMeModel> AboutMeModels { get; set; }
+        public DbSet<ProductModel> ProductsModel { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

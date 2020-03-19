@@ -15,8 +15,7 @@ namespace SimplyProductShop.Migrations
 
         protected override void Seed(SimplyProductShop.Models.ApplicationDbContext context)
         {
-            AboutMeModel aboutSeed = new AboutMeModel() { WhoIAm = "None", WhatImIdoing = "None", MyExperience = "None" };
-            context.AboutMeModels.Add(aboutSeed);
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
