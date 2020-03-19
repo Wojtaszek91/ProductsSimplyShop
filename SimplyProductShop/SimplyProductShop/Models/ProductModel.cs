@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SimplyProductShop.Models
 {
-    public class Products
+    public class ProductModel
     {
         int Id { get; set; }
         string Name { get; set; }

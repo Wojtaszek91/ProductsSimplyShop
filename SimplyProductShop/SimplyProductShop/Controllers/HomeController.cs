@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplyProductShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,16 @@ namespace SimplyProductShop.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         // Get: Index main page
         public ViewResult Index()
@@ -17,9 +28,8 @@ namespace SimplyProductShop.Controllers
         }
 
         // Get: About/edit *** Edit content of main page
-        public ViewResult Edit()
+        public ViewResult EditAbout()
         {
-
             return View();
         }
 

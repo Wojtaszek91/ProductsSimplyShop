@@ -8,10 +8,12 @@ namespace SimplyProductShop.Models
 {
     public class AboutMeModel
     {
+        [Key]
+        public int id { get; set; }
         [Required]
-        string WhoIam { get; set; }
+        public string WhoIAm { get; set; }
         [Required]
-        string WhatImIdoing { get; set; }
-        string MyExperience { get; set; }
+        public string WhatImIdoing { get; set; }
+        public string MyExperience { get; set; }
     }
 }
