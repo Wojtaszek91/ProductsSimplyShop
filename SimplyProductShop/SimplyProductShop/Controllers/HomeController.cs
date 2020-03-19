@@ -8,6 +8,8 @@ namespace SimplyProductShop.Controllers
 {
     public class HomeController : Controller
     {
+
+        // Index main page
         public ActionResult Index()
         {
             return View();
@@ -15,7 +17,7 @@ namespace SimplyProductShop.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Strona poswiecona ...";
 
             return View();
         }

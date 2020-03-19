@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace SimplyProductShop.Controllers.Api
 {
-    public class ProductsController : ApiController
+    public class ProductsApiController : ApiController
     {
         // Get: api/products >> By convection
      //   public IEnumerable<Prodcut> GetProdcuts(){}
