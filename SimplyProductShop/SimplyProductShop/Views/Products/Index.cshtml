@@ -4,5 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Lista produktow</h2>
+<table class="table table-striped table-hover ">
+    <tr class="success">
+        <th>Produkt</th>
+        <th>Opis</th>
+        <th>Czy dostepny ?</th>
+        <th>obraz</th>
+    </tr>
+    @foreach (var product in Model.ProductList)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.IsAvaliable</td>
+            <td>@product.Img</td>
+        </tr>
+    }
+</table>
 
