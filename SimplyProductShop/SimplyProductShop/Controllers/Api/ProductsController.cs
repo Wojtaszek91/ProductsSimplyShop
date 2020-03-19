@@ -9,5 +9,7 @@ namespace SimplyProductShop.Controllers.Api
 {
     public class ProductsController : ApiController
     {
+        // Get: api/products >> By convection
+     //   public IEnumerable<Prodcut> GetProdcuts(){}
     }
 }
