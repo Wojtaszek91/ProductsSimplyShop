@@ -9,18 +9,20 @@ namespace SimplyProductShop.Controllers
     public class HomeController : Controller
     {
 
-        // Index main page
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
+        // Get: Index main page
+        public ViewResult Index()
         {
             ViewBag.Message = "Strona poswiecona ...";
+            return View();
+        }
+
+        // Get: About/edit *** Edit content of main page
+        public ViewResult Edit()
+        {
 
             return View();
         }
+
 
         public ActionResult Contact()
         {
