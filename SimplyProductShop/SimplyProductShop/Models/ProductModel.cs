@@ -22,6 +22,7 @@ namespace SimplyProductShop.Models
 
         [Required]
         public bool IsAvaliable { get; set; }
+
         public string Category { get; set; }
     }
 }

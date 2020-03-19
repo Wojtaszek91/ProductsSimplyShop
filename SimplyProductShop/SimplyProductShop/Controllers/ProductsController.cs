@@ -26,9 +26,11 @@ namespace SimplyProductShop.Controllers
             var productList = _context.ProductsModel.ToList(); 
             return View(new ProductListViewModel { ProductList = productList});
         }
-        //Get: Products/Details
+        //Get: Products/Details/{id}
+        [Route("Details/{id}")]
         public ViewResult Details(int id)
         {
+            var product = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
             return View();
         }
     }
