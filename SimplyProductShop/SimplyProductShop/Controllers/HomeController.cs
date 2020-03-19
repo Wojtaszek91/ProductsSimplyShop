@@ -23,14 +23,25 @@ namespace SimplyProductShop.Controllers
         // Get: Index main page
         public ViewResult Index()
         {
-            ViewBag.Message = "Strona poswiecona ...";
-            return View();
+            return View(_context.AboutMeModels.SingleOrDefault(c=> c.id==1));
         }
 
-        // Get: About/edit *** Edit content of main page
+        // Get: About/edit *** From to edit AboutMe content
         public ViewResult EditAbout()
         {
             return View();
+        }
+
+        // Post:  Update About(HomePage) content
+        [HttpPost]
+        public RedirectToRouteResult SumbitAboutEditForm(AboutMeModel about)
+        {
+            var aboutDb = _context.AboutMeModels.SingleOrDefault(m => m.id == 1);
+            aboutDb.WhoIAm = about.WhoIAm;
+            aboutDb.WhatImIdoing = about.WhatImIdoing;
+            aboutDb.MyExperience = about.MyExperience;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 

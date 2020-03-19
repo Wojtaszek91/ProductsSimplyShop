@@ -3,8 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<hr />
-@using (@Html.BeginForm("Edit", "HomeController", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (@Html.BeginForm("SumbitAboutEditForm", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
         <legend>Ustaw pola opisu na glownej stronie :</legend>

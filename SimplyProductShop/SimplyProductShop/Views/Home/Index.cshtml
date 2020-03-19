@@ -1,7 +1,14 @@
-﻿@{
+﻿@model SimplyProductShop.Models.AboutMeModel
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>O mnie</h2>
 
-<p>Opis przeznaczenia strony...</p>
+<span class="label label-info">Kim jestem ?</span>
+<p>@Model.WhoIAm</p>
+<hr>
+<span class="label label-info">Co robie ?</span>
+<p>@Model.WhatImIdoing</p>
+<hr />
+<span class="label label-info">O moim doswiadczeniu</span>
+<p>@Model.MyExperience</p>
