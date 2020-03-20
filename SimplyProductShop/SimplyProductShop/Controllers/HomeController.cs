@@ -1,4 +1,6 @@
-﻿using SimplyProductShop.Models;
+﻿using AutoMapper;
+using SimplyProductShop.Models;
+using SimplyProductShop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,9 @@ namespace SimplyProductShop.Controllers
         // Get: Index main page
         public ViewResult Index()
         {
-            return View(_context.AboutMeModels.SingleOrDefault(c=> c.id==1));
+          var aboutDbModel =  _context.AboutMeModels.SingleOrDefault(c => c.id == 1);
+            var aboutViewModel = Mapper.Map<AboutMeModel,AboutMeViewModel>(aboutDbModel);
+            return View(aboutViewModel);
         }
 
         // Get: About/edit *** From to edit AboutMe content
@@ -34,12 +38,10 @@ namespace SimplyProductShop.Controllers
 
         // Post:  Update About(HomePage) content
         [HttpPost]
-        public RedirectToRouteResult SumbitAboutEditForm(AboutMeModel about)
+        public RedirectToRouteResult SumbitAboutEditForm(AboutMeViewModel about)
         {
             var aboutDb = _context.AboutMeModels.SingleOrDefault(m => m.id == 1);
-            aboutDb.WhoIAm = about.WhoIAm;
-            aboutDb.WhatImIdoing = about.WhatImIdoing;
-            aboutDb.MyExperience = about.MyExperience;
+            Mapper.Map(about,aboutDb);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -48,7 +50,6 @@ namespace SimplyProductShop.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

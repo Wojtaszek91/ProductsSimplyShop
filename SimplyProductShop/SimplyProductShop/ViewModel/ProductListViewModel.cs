@@ -8,6 +8,6 @@ namespace SimplyProductShop.ViewModel
 {
     public class ProductListViewModel
     {
-        public List<ProductModel> ProductList { get; set; }
+        public IEnumerable<ProductModel> ProductList { get; set; }
     }
 }

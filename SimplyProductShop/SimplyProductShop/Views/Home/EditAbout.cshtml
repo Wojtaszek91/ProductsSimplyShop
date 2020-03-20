@@ -1,4 +1,4 @@
-﻿@model SimplyProductShop.Models.AboutMeModel
+﻿@model SimplyProductShop.ViewModel.AboutMeViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -18,9 +18,6 @@
         <div class="form-group">
             @Html.LabelFor(m => m.MyExperience, new { @class = "col-lg-2 control-label" })
             @Html.TextAreaFor(m => m.MyExperience, new { @class = "form-control" })
-        </div>
-        <div>
-            @Html.HiddenFor(m => m.id)
         </div>
         <div class="col-lg-10 col-lg-offset-2">
             <button type="submit" class="btn btn-primary">Submit</button>
