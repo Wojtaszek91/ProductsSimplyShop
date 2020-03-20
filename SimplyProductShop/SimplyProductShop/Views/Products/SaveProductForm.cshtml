@@ -1,0 +1,36 @@
+﻿@model SimplyProductShop.ViewModel.ProductViewModel
+@{
+    ViewBag.Title = "SaveProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (@Html.BeginForm("SaveProductForm", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <legend>Ustaw pola opisu na glownej stronie :</legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-lg-2 control-label" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description, new { @class = "col-lg-2 control-label" })
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Category, new { @class = "col-lg-2 control-label" })
+            @Html.TextAreaFor(m => m.Category, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Img, new { @class = "col-lg-2 control-label" })
+            @Html.TextAreaFor(m => m.Img, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsAvaliable, new { @class = "col-lg-2 control-label" })
+            @Html.CheckBoxFor(m => m.IsAvaliable, new { @class = "checkbox" })
+        </div>
+        <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </fieldset>
+}
+

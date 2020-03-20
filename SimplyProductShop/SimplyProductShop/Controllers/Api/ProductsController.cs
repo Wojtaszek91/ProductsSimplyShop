@@ -10,11 +10,11 @@ using System.Web.Http;
 
 namespace SimplyProductShop.Controllers.Api
 {
-    public class ProductsApiController : ApiController
+    public class ProductsController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public ProductsApiController()
+        public ProductsController()
         {
             _context = new ApplicationDbContext();
         }

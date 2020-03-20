@@ -182,7 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Api\ProductsApiController.cs" />
+    <Compile Include="Controllers\Api\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -204,6 +204,10 @@
     <Compile Include="Migrations\202003201010555_RenameProductModelIntoProduct.cs" />
     <Compile Include="Migrations\202003201010555_RenameProductModelIntoProduct.Designer.cs">
       <DependentUpon>202003201010555_RenameProductModelIntoProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003201045543_populateProducts.cs" />
+    <Compile Include="Migrations\202003201045543_populateProducts.Designer.cs">
+      <DependentUpon>202003201045543_populateProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
@@ -276,6 +280,7 @@
     <Content Include="Views\Home\EditAbout.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\SaveProductForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003201010555_RenameProductModelIntoProduct.resx">
       <DependentUpon>202003201010555_RenameProductModelIntoProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003201045543_populateProducts.resx">
+      <DependentUpon>202003201045543_populateProducts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

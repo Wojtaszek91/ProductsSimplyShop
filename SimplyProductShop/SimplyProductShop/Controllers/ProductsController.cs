@@ -33,5 +33,15 @@ namespace SimplyProductShop.Controllers
             var product = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
             return View();
         }
+
+        [Route("SaveProductForm/{id}")]
+        public ViewResult SaveProductForm(int? id)
+        {
+            if (id == 0) id = 2;
+            var product = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            if (product != null)
+                return View(product);
+            else return View();
+        }
     }
 }
