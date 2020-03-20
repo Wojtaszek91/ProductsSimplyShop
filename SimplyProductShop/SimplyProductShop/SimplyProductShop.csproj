@@ -201,12 +201,16 @@
     <Compile Include="Migrations\202003191711580_AddCategoryPropertyToProductModel.Designer.cs">
       <DependentUpon>202003191711580_AddCategoryPropertyToProductModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003201010555_RenameProductModelIntoProduct.cs" />
+    <Compile Include="Migrations\202003201010555_RenameProductModelIntoProduct.Designer.cs">
+      <DependentUpon>202003201010555_RenameProductModelIntoProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AboutMeViewModel.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003191711580_AddCategoryPropertyToProductModel.resx">
       <DependentUpon>202003191711580_AddCategoryPropertyToProductModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003201010555_RenameProductModelIntoProduct.resx">
+      <DependentUpon>202003201010555_RenameProductModelIntoProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

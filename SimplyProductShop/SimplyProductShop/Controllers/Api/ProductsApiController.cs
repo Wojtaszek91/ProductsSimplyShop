@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplyProductShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,7 +10,23 @@ namespace SimplyProductShop.Controllers.Api
 {
     public class ProductsApiController : ApiController
     {
-        // Get: api/products >> By convection
-     //   public IEnumerable<Prodcut> GetProdcuts(){}
+        private ApplicationDbContext _context;
+
+        public ProductsApiController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        // Get: api/products
+        //public IEnumerable<Product> GetProducts()
+        //{
+        //    return _context.Products.ToList();
+        //}
+
+        //// Get: api/products/1
+        //public Product GetProduct(int id)
+        //{
+        //    if(_context)
+        //}
     }
 }

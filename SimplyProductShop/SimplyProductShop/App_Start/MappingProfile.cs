@@ -12,8 +12,8 @@ namespace SimplyProductShop.App_Start
     {
         public MappingProfile()
         {
-            Mapper.CreateMap<ProductModel, ProductViewModel>();
-            Mapper.CreateMap<ProductViewModel, ProductModel>();
+            Mapper.CreateMap<Product, ProductViewModel>();
+            Mapper.CreateMap<ProductViewModel, Product>();
             Mapper.CreateMap<AboutMeModel, AboutMeViewModel>();
             Mapper.CreateMap<AboutMeViewModel, AboutMeModel>();
         }
