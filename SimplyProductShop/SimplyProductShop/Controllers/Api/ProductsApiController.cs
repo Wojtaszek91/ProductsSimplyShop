@@ -1,4 +1,6 @@
-﻿using SimplyProductShop.Models;
+﻿using AutoMapper;
+using SimplyProductShop.Models;
+using SimplyProductShop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,15 +20,56 @@ namespace SimplyProductShop.Controllers.Api
         }
 
         // Get: api/products
-        //public IEnumerable<Product> GetProducts()
-        //{
-        //    return _context.Products.ToList();
-        //}
+        public IEnumerable<Product> GetProducts()
+        {
+            return _context.ProductsModel.ToList();
+        }
 
-        //// Get: api/products/1
-        //public Product GetProduct(int id)
-        //{
-        //    if(_context)
-        //}
+        // Get: api/products/1
+        public ProductViewModel GetProduct(int id)
+        {
+          var productInDb =  _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            if (productInDb == null) throw new HttpResponseException(HttpStatusCode.NotFound);
+           var productViewModel = Mapper.Map<Product, ProductViewModel>(productInDb);
+            return productViewModel;
+        }
+
+        //Post: api/products
+        [HttpPost]
+        public ProductViewModel PostProduct(ProductViewModel product)
+        {
+            if (!ModelState.IsValid)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+           var productForDB = Mapper.Map<ProductViewModel, Product>(product);
+            _context.ProductsModel.Add(productForDB);
+            _context.SaveChanges();
+            return product;
+        }
+
+        //PUT: api/products/1
+        [HttpPut]
+        public void UpdateProduct(int id, ProductViewModel product)
+        {
+            if (!ModelState.IsValid)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            var productInDb =_context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            if (productInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            else
+            {
+                Mapper.Map(product, productInDb);
+                _context.SaveChanges();
+            }
+        }
+
+        //DELETE: api/products/1
+        public void DeleteProduct(int id)
+        {
+            var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            if (productInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            _context.ProductsModel.Remove(productInDb);
+            _context.SaveChanges();
+        }
     }
 }
