@@ -1,4 +1,5 @@
-﻿using SimplyProductShop.Models;
+﻿using AutoMapper;
+using SimplyProductShop.Models;
 using SimplyProductShop.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -34,14 +35,17 @@ namespace SimplyProductShop.Controllers
             return View();
         }
 
-        [Route("SaveProductForm/{id}")]
         public ViewResult SaveProductForm(int? id)
         {
-            if (id == 0) id = 2;
-            var product = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
-            if (product != null)
-                return View(product);
-            else return View();
+            if (id.HasValue) {
+                var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+                if (productInDb != null)
+                {
+                    var productView = Mapper.Map<Product, ProductViewModel>(productInDb);
+                    return View(productView);
+                }
+            };
+            return View();
         }
     }
 }
