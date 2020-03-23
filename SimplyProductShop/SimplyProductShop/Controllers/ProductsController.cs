@@ -28,8 +28,14 @@ namespace SimplyProductShop.Controllers
         }
 
 
+
         public ViewResult SaveProductForm(int? id)
         {
+            if (!ModelState.IsValid)
+            {
+                
+            }
+            
             if (id.HasValue) {
                 var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
                 if (productInDb != null)
@@ -39,6 +45,17 @@ namespace SimplyProductShop.Controllers
                 }
             };
             return View();
+        }
+
+        // GET: Products/Details/id
+        public ActionResult Details(int id)
+        {
+            var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+
+            if (productInDb == null)
+                return HttpNotFound();
+            var productView = Mapper.Map<Product, ProductViewModel>(productInDb);
+            return View(productView);
         }
     }
 }
