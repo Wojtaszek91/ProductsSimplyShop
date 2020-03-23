@@ -9,7 +9,7 @@ namespace SimplyProductShop.ViewModel
     public class ProductViewModel
     {
         [Key]
-        public int Id { get; set; }
+        public byte Id { get; set; }
 
         [Required]
         public string Name { get; set; }
