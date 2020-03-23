@@ -24,8 +24,7 @@ namespace SimplyProductShop.Controllers
         // GET: Products
         public ViewResult Index()
         {
-            var productList = _context.ProductsModel.ToList(); 
-            return View(new ProductListViewModel { ProductList = productList});
+            return View();
         }
         //Get: Products/Details/{id}
         [Route("Details/{id}")]
