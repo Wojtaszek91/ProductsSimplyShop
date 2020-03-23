@@ -21,18 +21,12 @@ namespace SimplyProductShop.Controllers
         {
             _context.Dispose();
         }
-        // GET: Products
+        // GET: Index
         public ViewResult Index()
         {
             return View();
         }
-        //Get: Products/Details/{id}
-        [Route("Details/{id}")]
-        public ViewResult Details(int id)
-        {
-            var product = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
-            return View();
-        }
+
 
         public ViewResult SaveProductForm(int? id)
         {
