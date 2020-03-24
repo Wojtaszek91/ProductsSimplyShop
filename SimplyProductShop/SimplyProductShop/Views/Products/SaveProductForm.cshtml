@@ -33,6 +33,7 @@
             @Html.CheckBoxFor(m => m.IsAvaliable, new { @class = "checkbox" })
         </div>
         @Html.HiddenFor(p => p.Id)
+        @Html.AntiForgeryToken()
         <div class="col-lg-10 col-lg-offset-2">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

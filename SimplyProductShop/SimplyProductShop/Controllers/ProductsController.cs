@@ -48,6 +48,7 @@ namespace SimplyProductShop.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save([Bind(Exclude = "Id")] ProductViewModel productForDb)
         {
             if (!ModelState.IsValid)
