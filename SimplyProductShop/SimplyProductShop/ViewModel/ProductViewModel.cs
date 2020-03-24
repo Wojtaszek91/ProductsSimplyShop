@@ -8,7 +8,7 @@ namespace SimplyProductShop.ViewModel
 {
     public class ProductViewModel
     {
-        [Key]
+
         public int Id { get; set; }
 
         [Required]

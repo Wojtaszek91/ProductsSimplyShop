@@ -48,7 +48,7 @@ namespace SimplyProductShop.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(ProductViewModel productForDb)
+        public ActionResult Save([Bind(Exclude = "Id")] ProductViewModel productForDb)
         {
             if (!ModelState.IsValid)
             {

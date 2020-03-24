@@ -16,14 +16,17 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Description, new { @class = "col-lg-2 control-label" })
             @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Category, new { @class = "col-lg-2 control-label" })
             @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Category)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Img, new { @class = "col-lg-2 control-label" })
             @Html.TextBoxFor(m => m.Img, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Img)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.IsAvaliable, new { @class = "col-lg-2 control-label" })
