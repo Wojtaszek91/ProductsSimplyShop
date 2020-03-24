@@ -1,6 +1,6 @@
 ﻿@model SimplyProductShop.ViewModel.ProductListViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -28,14 +28,14 @@
         $(document).ready(function () {
             var productTable = $("#products").DataTable({
                 ajax: {
-                    url: "/api/products/",
+                    url: "/api/products",
                     dataSrc: ""                    
                 },
                 columns: [
                     {
                         data: "Name",
                         render: function (data,type , product) {
-                            return "<a href='Details/" + product.Id + "'>" + data + "</a>"
+                            return "<a href='Products/Details/" + product.Id + "'>" + data + "</a>"
                         }
                     },
                     {
@@ -48,13 +48,14 @@
                         data: "Img"
                     },
                     {
-                        render: function () {
-                            return "<p>Edytuj</p>"
+                        data: "Id",
+                        render: function (data) {
+                            return "<a href='Products/SaveProductForm/" + data + "'>Edytuj</a>"
                         }
                     },
                     {
                         data: "Id",
-                        render: function (data,type , product) {
+                        render: function (data) {
                             return "<button class='js-delete' data-product-id=" + data + ">Usun</button>"                    
                         }
                     }

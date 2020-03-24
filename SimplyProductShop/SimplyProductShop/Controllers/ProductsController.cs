@@ -47,6 +47,27 @@ namespace SimplyProductShop.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Save(ProductViewModel productForDb)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("SaveProductForm", productForDb);
+            }
+
+            if (productForDb.Id == 0)
+                _context.ProductsModel.Add(Mapper.Map<ProductViewModel,Product>(productForDb));
+            else
+            {
+                var productInDb = _context.ProductsModel.Single(p => p.Id == productForDb.Id);
+                Mapper.Map(productForDb, productInDb);
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Products");
+        }
+
         // GET: Products/Details/id
         public ActionResult Details(int id)
         {

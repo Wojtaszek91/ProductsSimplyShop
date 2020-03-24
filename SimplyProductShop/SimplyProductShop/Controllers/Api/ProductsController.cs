@@ -28,7 +28,7 @@ namespace SimplyProductShop.Controllers.Api
         // Get: api/products/1
         public ProductViewModel GetProduct(int id)
         {
-          var productInDb =  _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+          var productInDb =  _context.ProductsModel.SingleOrDefault(p => p.Id == id);
             if (productInDb == null) throw new HttpResponseException(HttpStatusCode.NotFound);
            var productViewModel = Mapper.Map<Product, ProductViewModel>(productInDb);
             return productViewModel;
@@ -40,8 +40,7 @@ namespace SimplyProductShop.Controllers.Api
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
-           var productForDB = Mapper.Map<ProductViewModel, Product>(product);
-            _context.ProductsModel.Add(productForDB);
+            _context.ProductsModel.Add(Mapper.Map<ProductViewModel, Product>(product));
             _context.SaveChanges();
             return product;
         }
@@ -52,7 +51,7 @@ namespace SimplyProductShop.Controllers.Api
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
-            var productInDb =_context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            var productInDb =_context.ProductsModel.SingleOrDefault(p => p.Id == id);
             if (productInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             else
@@ -65,7 +64,7 @@ namespace SimplyProductShop.Controllers.Api
         //DELETE: api/products/1
         public void DeleteProduct(int id)
         {
-            var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
+            var productInDb = _context.ProductsModel.SingleOrDefault(p => p.Id == id);
             if (productInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             _context.ProductsModel.Remove(productInDb);
