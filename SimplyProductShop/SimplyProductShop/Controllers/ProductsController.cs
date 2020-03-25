@@ -22,11 +22,16 @@ namespace SimplyProductShop.Controllers
             _context.Dispose();
         }
 
-        // GET: Index
-        // return main product view
+        /* GET: Index
+         Returns view depended on users role. 
+        IF Admin returns CRUD products table
+        ELSE returns read only prodcuts table
+        */
         public ViewResult Index()
         {
-            return View();
+            if (User.IsInRole("CanManageProducts"))
+                return View();
+            return View("ProductsList");
         }
 
         // GET: return view with product Form, if passed with correct Id return form with existing values 
