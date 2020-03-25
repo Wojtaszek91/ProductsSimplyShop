@@ -21,21 +21,17 @@ namespace SimplyProductShop.Controllers
         {
             _context.Dispose();
         }
+
         // GET: Index
+        // return main product view
         public ViewResult Index()
         {
             return View();
         }
 
-
-
+        // GET: return view with product Form, if passed with correct Id return form with existing values 
         public ViewResult SaveProductForm(int? id)
-        {
-            if (!ModelState.IsValid)
-            {
-                
-            }
-            
+        {            
             if (id.HasValue) {
                 var productInDb = _context.ProductsModel.SingleOrDefault(c => c.Id == id);
                 if (productInDb != null)
@@ -47,6 +43,8 @@ namespace SimplyProductShop.Controllers
             return View();
         }
 
+        // POST: Save Product in Db
+        // If not found in db create new one, if exist update values
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save([Bind(Exclude = "Id")] ProductViewModel productForDb)

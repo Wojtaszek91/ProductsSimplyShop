@@ -209,6 +209,10 @@
     <Compile Include="Migrations\202003201045543_populateProducts.Designer.cs">
       <DependentUpon>202003201045543_populateProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003251219407_SeedingUsers.cs" />
+    <Compile Include="Migrations\202003251219407_SeedingUsers.Designer.cs">
+      <DependentUpon>202003251219407_SeedingUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -489,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003201045543_populateProducts.resx">
       <DependentUpon>202003201045543_populateProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003251219407_SeedingUsers.resx">
+      <DependentUpon>202003251219407_SeedingUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
