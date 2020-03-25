@@ -54,9 +54,9 @@ namespace SimplyProductShop
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "216544489427138",
+               appSecret: "7ffd85e2ec2bdba86b04c2de075d8424");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

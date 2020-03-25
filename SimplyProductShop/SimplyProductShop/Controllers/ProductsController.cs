@@ -29,13 +29,13 @@ namespace SimplyProductShop.Controllers
         */
         public ViewResult Index()
         {
-            if (User.IsInRole("CanManageProducts"))
+            if (User.IsInRole(RoleName.CanManageProducts))
                 return View();
             return View("ProductsList");
         }
 
         // GET: return view with product Form, if passed with correct Id return form with existing values 
-        [Authorize(Roles = "CanManageProducts")]
+        [Authorize(Roles = RoleName.CanManageProducts)]
         public ViewResult SaveProductForm(int? id)
         {            
             if (id.HasValue) {
@@ -53,6 +53,7 @@ namespace SimplyProductShop.Controllers
         // If not found in db create new one, if exist update values
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageProducts)]
         public ActionResult Save([Bind(Exclude = "Id")] ProductViewModel productForDb)
         {
             if (!ModelState.IsValid)
