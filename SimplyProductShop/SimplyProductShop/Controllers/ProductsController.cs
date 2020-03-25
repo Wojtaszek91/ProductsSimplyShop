@@ -35,6 +35,7 @@ namespace SimplyProductShop.Controllers
         }
 
         // GET: return view with product Form, if passed with correct Id return form with existing values 
+        [Authorize(Roles = "CanManageProducts")]
         public ViewResult SaveProductForm(int? id)
         {            
             if (id.HasValue) {

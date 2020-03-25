@@ -36,6 +36,7 @@ namespace SimplyProductShop.Controllers.Api
 
         //Post: api/products
         [HttpPost]
+        [Authorize(Roles = "CanManageProducts")]
         public ProductViewModel PostProduct(ProductViewModel product)
         {
             if (!ModelState.IsValid)
@@ -47,6 +48,7 @@ namespace SimplyProductShop.Controllers.Api
 
         //PUT: api/products/1
         [HttpPut]
+        [Authorize(Roles = "CanManageProducts")]
         public void UpdateProduct(int id, ProductViewModel product)
         {
             if (!ModelState.IsValid)
@@ -62,6 +64,7 @@ namespace SimplyProductShop.Controllers.Api
         }
 
         //DELETE: api/products/1
+        [Authorize(Roles = "CanManageProducts")]
         public void DeleteProduct(int id)
         {
             var productInDb = _context.ProductsModel.SingleOrDefault(p => p.Id == id);
