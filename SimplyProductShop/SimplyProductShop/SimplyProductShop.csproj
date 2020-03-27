@@ -201,6 +201,7 @@
     <Compile Include="Controllers\Api\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Dto\OrderDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -242,6 +243,14 @@
     <Compile Include="Migrations\202003271315224_FeathersInProductOrderCustomer.cs" />
     <Compile Include="Migrations\202003271315224_FeathersInProductOrderCustomer.Designer.cs">
       <DependentUpon>202003271315224_FeathersInProductOrderCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003271516027_FixedOrderModel.cs" />
+    <Compile Include="Migrations\202003271516027_FixedOrderModel.Designer.cs">
+      <DependentUpon>202003271516027_FixedOrderModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003271521387_MakeDatesNullableInOrderDomainModel.cs" />
+    <Compile Include="Migrations\202003271521387_MakeDatesNullableInOrderDomainModel.Designer.cs">
+      <DependentUpon>202003271521387_MakeDatesNullableInOrderDomainModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
@@ -494,6 +503,7 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\SaveProductForm.cshtml" />
     <Content Include="Views\Products\ProductsList.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -539,6 +549,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003271315224_FeathersInProductOrderCustomer.resx">
       <DependentUpon>202003271315224_FeathersInProductOrderCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271516027_FixedOrderModel.resx">
+      <DependentUpon>202003271516027_FixedOrderModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271521387_MakeDatesNullableInOrderDomainModel.resx">
+      <DependentUpon>202003271521387_MakeDatesNullableInOrderDomainModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

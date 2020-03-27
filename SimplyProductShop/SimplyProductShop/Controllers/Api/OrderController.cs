@@ -22,12 +22,15 @@ namespace SimplyProductShop.Controllers.Api
         public IHttpActionResult MakeOrder(OrderDto order)
         {
 
-            _context.OrderModels.Add(new OrderModel()
-            {
-                customer = _context.Customers.Single(c => c.Id == order.CustomerId),
-                productsList = _context.ProductsModel.Where(p => order.ProductsIdList.Contains(p.Id)).ToList(),
-                orderDate = DateTime.Now
-            });
+            var productList = _context.ProductsModel.Where(p => order.ProductsIdList.Contains(p.Id)).ToList();
+            foreach (var product in productList) {
+                _context.OrderModels.Add(new OrderModel()
+                {
+                    customer = _context.Customers.Single(c => c.Id == order.CustomerId),
+                    product = product,
+                    orderDate = DateTime.Now
+                });
+            }
 
             _context.SaveChanges();
             
