@@ -5,38 +5,9 @@
 }
 
 <h2>Make order</h2>
-
-@*@using (@Html.BeginForm("Save", "Products", FormMethod.Post, new { @class = "form-horizontal" }))
-{
-    <fieldset>
-        <legend>Ustaw pola opisu dla produktu :</legend>
-        <div class="form-group">
-            @Html.LabelFor(m => m.CustomerId, new { @class = "col-lg-2 control-label" })
-            @Html.TextBoxFor(m => m.CustomerId, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Description, new { @class = "col-lg-2 control-label" })
-            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Description)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Category, new { @class = "col-lg-2 control-label" })
-            @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Category)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Img, new { @class = "col-lg-2 control-label" })
-            @Html.TextBoxFor(m => m.Img, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Img)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.IsAvaliable, new { @class = "col-lg-2 control-label" })
-            @Html.CheckBoxFor(m => m.IsAvaliable, new { @class = "checkbox" })
-        </div>
-        @Html.HiddenFor(p => p.Id)
-        @Html.AntiForgeryToken()
-        <div class="col-lg-10 col-lg-offset-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </fieldset>
-}*@
+<form>
+    <div class="form-group">
+        <label></label>
+        <input type="text" value="" class="form-control" />
+    </div>
+</form>
