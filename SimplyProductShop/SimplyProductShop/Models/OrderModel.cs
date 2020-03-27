@@ -8,10 +8,10 @@ namespace SimplyProductShop.Models
 {
     public class OrderModel
     {
-        [Required]
+        [Key]
         public int Id { get; set; }
         public Customer customer { get; set; }
-        public Product product { get; set; }
+        public List<Product> productsList { get; set; }
         [Required]
         public DateTime orderDate { get; set; }
         public DateTime deliveredDate { get; set; }

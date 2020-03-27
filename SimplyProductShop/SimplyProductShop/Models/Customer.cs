@@ -8,7 +8,8 @@ namespace SimplyProductShop.Models
 {
     public class Customer
     { 
-        [Required]
-        int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

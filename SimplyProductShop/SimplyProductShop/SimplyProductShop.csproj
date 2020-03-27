@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Dto\OrderDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,11 +231,25 @@
     <Compile Include="Migrations\202003251219407_SeedingUsers.Designer.cs">
       <DependentUpon>202003251219407_SeedingUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003271222524_AddOrderModelAndSkeletonOfCustomer.cs" />
+    <Compile Include="Migrations\202003271222524_AddOrderModelAndSkeletonOfCustomer.Designer.cs">
+      <DependentUpon>202003271222524_AddOrderModelAndSkeletonOfCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003271230011_SeedCustomers.cs" />
+    <Compile Include="Migrations\202003271230011_SeedCustomers.Designer.cs">
+      <DependentUpon>202003271230011_SeedCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003271315224_FeathersInProductOrderCustomer.cs" />
+    <Compile Include="Migrations\202003271315224_FeathersInProductOrderCustomer.Designer.cs">
+      <DependentUpon>202003271315224_FeathersInProductOrderCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMeModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -515,6 +530,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003251219407_SeedingUsers.resx">
       <DependentUpon>202003251219407_SeedingUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271222524_AddOrderModelAndSkeletonOfCustomer.resx">
+      <DependentUpon>202003271222524_AddOrderModelAndSkeletonOfCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271230011_SeedCustomers.resx">
+      <DependentUpon>202003271230011_SeedCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271315224_FeathersInProductOrderCustomer.resx">
+      <DependentUpon>202003271315224_FeathersInProductOrderCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

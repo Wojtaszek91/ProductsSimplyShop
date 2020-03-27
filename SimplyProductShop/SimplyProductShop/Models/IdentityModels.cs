@@ -22,6 +22,8 @@ namespace SimplyProductShop.Models
     {
         public DbSet<AboutMeModel> AboutMeModels { get; set; }
         public DbSet<Product> ProductsModel { get; set; }
+        public DbSet<OrderModel> OrderModels { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
